@@ -1,0 +1,29 @@
+version: '1'
+
+services:
+  app:
+    image: 'products_api'
+    build:
+      context: .
+    container_name: Products
+    ports:
+      - "8100:8100"
+    depends_on:
+        - db
+        
+    environment:
+      - SPRING_JPA_SHOW-SQL=${SHOW_SQL}
+      - SPRING_DATASOURCE_USERNAME=${USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=${DDL_AUTO}
+      - SPRING_DATASOURCE_URL=${CONNECTION_STRING}
+      - SPRING_DATASOURCE_DRIVERCLASSNAME=${DRIVER}
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=${DIALECT}
+      - SPRING_JPA_PROPERTIES_HIBERNATE_JDBC_LOB_NON_CONTEXTUAL_CREATION=${CONTEXTUAL_CREATION}
+      
+  db:
+    image: 'postgres:13.1-alpine'
+    environment:
+      - POSTGRES_USER=${USERNAME_DB}
+      - POSTGRES_PASSWORD=${PASSWORD_DB}
+      - POSTGRES_DB=${DB}
