@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: shopping-store-api
+  datasource:
+    driverClassName: ${DRIVER}
+    password: ${PASSWORD}
+    url: ${CONNECTION_STRING}
+    username: ${USERNAME}
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO}
+    properties:
+      hibernate:
+        dialect: ${DIALECT}
+        jdbc:
+          lob:
+            non-contextual-creation: ${CONTEXTUAL_CREATION}
+    show-sql: ${SHOW_SQL}
+    
+server:
+  port: ${PORT:8200}
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
+      
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      eventConsumerBufferSize: 5
+      failureRateThreshold: 5
+      minimumNumberOfCalls: 10
+      permittedNumberOfCallsInHalfOpenState: 4
+      record-exceptions: 
+        - org.springframework.web.client.HttpServerErrorException
+        - java.util.concurrent.TimeoutException
+        - java.io.IOException
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      slidingWindowType: COUNT_BASED
+      waitDurationInOpenState: 5s
+      slowCallRateThreshold: 50
+      slowCallDurationThreshold: 5s  
+  instances:
+    backendA:
+      baseConfig: default
+      waitDurationInOpenState: 5
+ 
+
+
