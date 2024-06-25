@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -35,9 +38,6 @@ import com.shopping.mall.discountsapi.domain.usecase.FindByIdDiscount;
 import com.shopping.mall.discountsapi.domain.usecase.SaveDiscount;
 import com.shopping.mall.discountsapi.domain.usecase.UpdateDiscount;
 import com.shopping.mall.discountsapi.test.utils.ClassBuilder;
-
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validator;
 
 class DiscountServiceImplementTest {
 	

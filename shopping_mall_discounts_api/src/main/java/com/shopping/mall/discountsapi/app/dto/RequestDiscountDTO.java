@@ -3,14 +3,15 @@ package com.shopping.mall.discountsapi.app.dto;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.shopping.mall.discountsapi.app.enums.TypeDiscount;
 import com.shopping.mall.discountsapi.cross.constants.Conf;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

@@ -2,12 +2,13 @@ package com.shopping.mall.discountsapi.app.dto;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.shopping.mall.discountsapi.cross.constants.Conf;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

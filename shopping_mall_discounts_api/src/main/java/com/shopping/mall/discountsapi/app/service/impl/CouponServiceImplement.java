@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.transaction.Transactional;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -25,9 +29,6 @@ import com.shopping.mall.discountsapi.domain.usecase.FindByIdCoupon;
 import com.shopping.mall.discountsapi.domain.usecase.SaveCoupon;
 import com.shopping.mall.discountsapi.domain.usecase.UpdateCoupon;
 
-import jakarta.transaction.Transactional;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

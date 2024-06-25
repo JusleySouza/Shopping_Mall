@@ -17,7 +17,7 @@ import com.shopping.mall.discountsapi.app.dto.RequestDiscountDTO;
 import com.shopping.mall.discountsapi.app.dto.ResponseDiscountDTO;
 import com.shopping.mall.discountsapi.app.service.DiscountService;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
