@@ -29,6 +29,7 @@ import com.shopping.mall.userapi.exception.DuplicateDocumentsException;
 import com.shopping.mall.userapi.exception.ResourceNotFoundException;
 import com.shopping.mall.userapi.exception.UpdateNotAllowedException;
 import com.shopping.mall.userapi.exception.ValidationException;
+import com.shopping.mall.userapi.feignclients.UserAuthClient;
 import com.shopping.mall.userapi.model.User;
 import com.shopping.mall.userapi.model.dto.RequestUserDTO;
 import com.shopping.mall.userapi.model.dto.ResponseUserDTO;
@@ -39,6 +40,9 @@ class UsersServicesImplementTest {
 	
 	@InjectMocks
 	private UsersServicesImplement services;
+	
+	@Mock
+	private UserAuthClient userAuthClient;
 	
 	@Mock
 	private Validator mockValidator;
